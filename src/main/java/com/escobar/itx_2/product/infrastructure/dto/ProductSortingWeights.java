@@ -1,4 +1,4 @@
-package com.escobar.itx_2.product.domain;
+package com.escobar.itx_2.product.infrastructure.dto;
 
 import java.util.HashMap;
 import java.util.Map;

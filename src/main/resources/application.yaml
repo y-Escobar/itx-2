@@ -1,3 +1,6 @@
 spring:
   application:
     name: itx-2
+  data:
+    mongodb:
+      uri: ${SPRING_DATA_MONGODB_URI}

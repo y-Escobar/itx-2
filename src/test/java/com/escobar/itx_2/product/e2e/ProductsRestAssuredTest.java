@@ -1,7 +1,7 @@
 package com.escobar.itx_2.product.e2e;
 
 import com.escobar.itx_2.product.config.InMemoryProductRepository;
-import com.escobar.itx_2.product.application.SortProduct;
+import com.escobar.itx_2.product.application.ListProducts;
 import com.escobar.itx_2.product.domain.Product;
 import com.escobar.itx_2.product.domain.ProductSize;
 import com.escobar.itx_2.product.infrastructure.controller.ProductController;
@@ -39,7 +39,7 @@ public class ProductsRestAssuredTest {
     @BeforeEach
     void setup() {
         var repo = new InMemoryProductRepository(sampleProducts());
-        var service = new SortProduct(repo);
+        var service = new ListProducts(repo);
         RestAssuredMockMvc.standaloneSetup(new ProductController(service));
     }
 

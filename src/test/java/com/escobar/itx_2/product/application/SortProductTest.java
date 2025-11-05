@@ -3,7 +3,7 @@ package com.escobar.itx_2.product.application;
 import com.escobar.itx_2.product.config.InMemoryProductRepository;
 import com.escobar.itx_2.product.domain.Product;
 import com.escobar.itx_2.product.domain.ProductSize;
-import com.escobar.itx_2.product.domain.ProductSortingWeights;
+import com.escobar.itx_2.product.infrastructure.dto.ProductSortingWeights;
 import com.escobar.itx_2.product.domain.primitives.ProductPrimitive;
 import org.junit.jupiter.api.Test;
 
@@ -28,11 +28,11 @@ public class SortProductTest {
     @Test
     void sorts_products_by_weighted_score_desc() {
         var repo = new InMemoryProductRepository(sampleProducts());
-        var service = new SortProduct(repo);
+        var service = new ListProducts(repo);
 
         var weights = new ProductSortingWeights(1.0, 1.0); // sales + stock ratio
 
-        var result = service.execute(weights);
+        var result = service.execute(weights.asMap());
         assertFalse(result.isEmpty());
 
         var byId = sampleProducts().stream().collect(java.util.stream.Collectors.toMap(

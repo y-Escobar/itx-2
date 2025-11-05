@@ -1,15 +1,13 @@
 package com.escobar.itx_2.product.infrastructure.controller;
 
-import com.escobar.itx_2.product.application.SortProduct;
+import com.escobar.itx_2.product.application.ListProducts;
 import com.escobar.itx_2.product.domain.ProductRead;
 import com.escobar.itx_2.product.domain.ProductSize;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -26,7 +24,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ProductController.class)
 class ProductControllerWebMvcTest {
     @Autowired MockMvc mvc;
-    @MockitoBean SortProduct sortProduct;
+    @MockitoBean
+    ListProducts sortProduct;
 
     @Test
     @DisplayName("GET /products maps weights from query params and returns list")
