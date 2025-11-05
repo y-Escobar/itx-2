@@ -25,14 +25,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class ProductControllerWebMvcTest {
     @Autowired MockMvc mvc;
     @MockitoBean
-    ListProducts sortProduct;
+    ListProducts listProducts;
 
     @Test
     @DisplayName("GET /products maps weights from query params and returns list")
     void list_returns_sorted_products() throws Exception {
         var p = new ProductRead("1","A", 10, Map.of(ProductSize.SMALL, 1));
 
-        Mockito.when(sortProduct.execute(Mockito.any())).thenReturn(List.of(p));
+        Mockito.when(listProducts.execute(Mockito.any())).thenReturn(List.of(p));
 
         mvc.perform(get("/products")
                         .queryParam("salesUnits", "1.0")

@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/products")
 public class ProductController {
 
-    private final ListProducts sortProducts;
+    private final ListProducts listProducts;
 
     public ProductController(ListProducts sortProducts){
-        this.sortProducts = sortProducts;
+        this.listProducts = sortProducts;
     }
 
     @GetMapping
     public ListProductsResponseDTO list(@ModelAttribute ProductSortingWeights weights) {
-        return new ListProductsResponseDTO(sortProducts.execute(weights.asMap()));
+        return new ListProductsResponseDTO(listProducts.execute(weights.asMap()));
     }
 
 }

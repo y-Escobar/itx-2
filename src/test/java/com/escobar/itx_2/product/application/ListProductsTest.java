@@ -13,7 +13,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SortProductTest {
+public class ListProductsTest {
     private static List<Product> sampleProducts() {
         return List.of(
             Product.fromPrimitive(new ProductPrimitive("1","V-NECH BASIC SHIRT", 100, Map.of(ProductSize.SMALL, 4, ProductSize.MEDIUM, 9, ProductSize.LARGE, 0))),
