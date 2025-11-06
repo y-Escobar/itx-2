@@ -155,6 +155,7 @@ Se utiliza **MongoDB** como base de datos, con un repositorio de productos preca
 - **Rest Assured** para E2E
 - **Gradle** como herramienta de build
 - **Docker**
+- **Swagger**
 
 ---
 
