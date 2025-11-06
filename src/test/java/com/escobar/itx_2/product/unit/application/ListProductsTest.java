@@ -1,5 +1,6 @@
-package com.escobar.itx_2.product.application;
+package com.escobar.itx_2.product.unit.application;
 
+import com.escobar.itx_2.product.application.ListProducts;
 import com.escobar.itx_2.product.config.InMemoryProductRepository;
 import com.escobar.itx_2.product.domain.Product;
 import com.escobar.itx_2.product.domain.ProductSize;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -30,12 +32,12 @@ public class ListProductsTest {
         var repo = new InMemoryProductRepository(sampleProducts());
         var service = new ListProducts(repo);
 
-        var weights = new ProductSortingWeights(1.0, 1.0); // sales + stock ratio
+        var weights = new ProductSortingWeights(1.0, 1.0);
 
         var result = service.execute(weights.asMap());
         assertFalse(result.isEmpty());
 
-        var byId = sampleProducts().stream().collect(java.util.stream.Collectors.toMap(
+        var byId = sampleProducts().stream().collect(Collectors.toMap(
                 p -> p.toProductRead().id(), p -> p
         ));
 

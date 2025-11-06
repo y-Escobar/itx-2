@@ -4,7 +4,6 @@ import com.escobar.itx_2.product.domain.ProductSize;
 import com.escobar.itx_2.product.domain.primitives.ProductPrimitive;
 import com.escobar.itx_2.product.infrastructure.entity.ProductEntity;
 import com.escobar.itx_2.product.infrastructure.repository.MongoProductRepository;
-import com.escobar.itx_2.product.infrastructure.repository.ProductDomainRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: itx-2-test
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/testdatabase}
+server:
+  servlet:
+    context-path: /api

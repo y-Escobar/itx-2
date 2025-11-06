@@ -12,7 +12,6 @@ import org.springframework.test.context.ActiveProfiles;
 class Itx2ApplicationTests {
 
 	@Test
-	void contextLoads() {
-	}
+	void contextLoads() {}
 
 }

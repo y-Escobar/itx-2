@@ -21,7 +21,7 @@ public class ListProducts {
     public final List<ProductRead> execute(Map<String, Double> weights){
 
         List<Product> products = productRepository.listProducts().stream().sorted(
-                Comparator.comparingDouble((Product p) -> p.scoreOf(weights)).reversed().thenComparing(Product::getNameValue)
+                Comparator.comparingDouble((Product p) -> -p.scoreOf(weights)).thenComparing(Product::getNameValue)
         ).toList();
 
         return products.stream().map(Product::toProductRead).toList();

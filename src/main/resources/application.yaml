@@ -4,3 +4,16 @@ spring:
   data:
     mongodb:
       uri: ${SPRING_DATA_MONGODB_URI}
+    rest:
+      detection-strategy: annotated
+server:
+  servlet:
+    context-path: /api
+springdoc:
+  api-docs:
+    path: /docs/openapi.json
+  swagger-ui:
+    path: /docs/swagger.html
+logging:
+  level:
+    org.springdoc: DEBUG
